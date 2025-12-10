@@ -144,9 +144,8 @@ CREATE INDEX idx_events_user ON events.recognition_events(user_id);
 
 ## 4. Pipeline Orchestration (Airflow Setup)
 
-We use an event-driven architecture supported by Apache Airflow to coordinate the workflow of the pipeline.
+We use an event-driven architecture supported by Apache Airflow to coordinate the workflow of the pipeline. The following the steps to set up Airflow
 
-### Run with Apache Airflow (part 2 - task 4)
 1. Find the DAG file for the workflow definition in `airflow/dags/floorplan_orchestration.py`
 2. Configure PYTHONPATH to ensure Airflow can import modules from the project:
 ```
