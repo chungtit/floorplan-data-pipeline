@@ -13,6 +13,8 @@ A Python pipeline for extracting, cleaning, and optimizing floorplan data from i
 ## Overview
 **Note**: Part 2 mentioned about RasterScan (from Hugging Face) and Gemini, emphasizing prompt engineering and the data pipeline. Because of this, the repository was designed to be more open-ended and to keep RasterScan and Gemini separate. RasterScan produces deterministic outputs, while generative AI is non-deterministic. Keeping them separate is useful for future work, whether we want to use the data to train our own models or monitor hallucinations that could mess our cleaned dataset, or enables AI-driven solution based on user actions.
 
+For ETL / Data Pipeline Design (Part 2, task 4), please find in `DESIGN.md`.
+
 ## Installation
 
 1. Clone the repository and navigate to it:
