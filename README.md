@@ -1,6 +1,14 @@
 # Part 2: Floorplan Data Pipeline
 
-A Python pipeline for extracting, cleaning, and optimizing floorplan data from images.
+A Python pipeline for extracting, cleaning, and optimizing floorplan data from images
+
+## Table of Contents
+- [Overview](#overview)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Run the pipeline with RasterScan](#run-the-pipeline-with-rasterscan)
+  - [Run the pipeline with Gemini](#run-the-pipeline-with-gemini)
+  - [Run with Apache Airflow (part 2 - task 4)](#run-with-apache-airflow-part-2---task-4)
 
 ## Overview
 **Note**: Part 2 mentioned about RasterScan (from Hugging Face) and Gemini, emphasizing prompt engineering and the data pipeline. Because of this, the repository was designed to be more open-ended and to keep RasterScan and Gemini separate. RasterScan produces deterministic outputs, while generative AI is non-deterministic. Keeping them separate is useful for future work, whether we want to use the data to train our own models or monitor hallucinations that could mess our cleaned dataset, or enables AI-driven solution based on user actions.
@@ -33,7 +41,7 @@ GEMINI_MODEL=gemini_model_you_use
 
 ## Usage
 
-### Run the full pipeline with RasterScan:
+### Run the pipeline with RasterScan:
 ```bash
 python src/rasterscan/main.py
 ```
@@ -44,7 +52,7 @@ This will:
 4. Apply optimizations (e.g., add bedrooms by splitting the biggest room, or add a new bedroom)
 5. Save outputs to `outputs/rasterscan`
 
-### Run the full pipeline with Gemini:
+### Run the pipeline with Gemini:
 ```bash
 python src/gemini/main.py
 ```
