@@ -10,12 +10,19 @@
 
 This document describes the design of a data pipeline for floorplan. The pipeline converts floorplan images into structured data, applies cleaning and optimizing.
 
-### Key Capabilities
-- Automated floorplan recognition from images (raster/vector)
-- Geometric data cleaning and canonicalization
-- Room adjacency graph construction
-- AI-powered floorplan optimization
-- Full data lineage and versioning
+## Table of Contents
+- [1. Executive Summary](#1-executive-summary)
+- [2. Pipeline Architecture](#2-pipeline-architecture)
+  - [2.1 High-Level Overview](#21-high-level-overview)
+  - [2.2 Pipeline Stages](#22-pipeline-stages)
+    - [Stage 1: Recognition (Bronze Layer - Raw Ingestion)](#stage-1-recognition-bronze-layer---raw-ingestion)
+    - [Stage 2: Cleaning & Post-Processing (Silver Layer - Filted, cleaned, or augmented)](#stage-2-cleaning--post-processing-silver-layer---filted-cleaned-or-augmented)
+    - [Stage 3: Optimization (Gold Layer - Business-level aggregates)](#stage-3-optimization-gold-layer---business-level-aggregates)
+- [3. Data Storage Model](#3-data-storage-model)
+  - [3.1 Storage Layers (Medallion Architecture)](#31-storage-layers-medallion-architecture)
+  - [3.2 Event Store (ML Training Data)](#32-event-store-ml-training-data---optional)
+- [4. Pipeline Orchestration (Airflow Setup)](#4-pipeline-orchestration-airflow-setup)
+- [5. Versioning & Reproducibility](#5-versioning--reproducibility)
 
 ---
 
@@ -114,7 +121,7 @@ CREATE INDEX idx_optimized_floorplan ON gold.optimized_floorplans(floorplan_id);
 CREATE INDEX idx_optimized_parent ON gold.optimized_floorplans(parent_optimization_id);
 ```
 
-### 3.2 Event Store (ML Training Data - Optional)
+### 3.2 Event Store (ML Training Data)
 
 ```sql
 CREATE TABLE events.recognition_events (
