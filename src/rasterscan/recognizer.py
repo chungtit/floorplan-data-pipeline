@@ -69,6 +69,6 @@ class FloorplanRecognizer:
         Use multimodal LLM for recognition.
         Could use Claude, GPT, or Gemini Vision.
         """
-        # please see: src/gemini/gemini_processor.py
+        # see: src/gemini/gemini_processor.py
         # keep this as a placeholder for feature implementation
         pass

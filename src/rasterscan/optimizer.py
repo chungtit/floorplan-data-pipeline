@@ -17,10 +17,6 @@ class FloorplanOptimizer:
         # Find largest room and split it
         largest_room = max(floorplan.rooms, key=lambda r: r.area)
         
-        if largest_room.area < min_area * 2:
-            print("Warning: Largest room too small to split effectively")
-            return floorplan
-        
         # Split the largest room
         new_rooms = self._split_room(largest_room)
         
