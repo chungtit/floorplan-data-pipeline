@@ -75,7 +75,7 @@ Your tasks:
 7. Fix any obvious geometric errors
 
 Output requirements:
-- Snap coordinates to 0.1m precision (e.g., 10.12 → 10.1)
+- Snap coordinates to 0.1m precision (e.g., 10.12 -> 10.1)
 - All wall thickness should be 0.15m
 - Room polygons should be counter-clockwise
 - Include adjacency_graph showing which rooms touch
