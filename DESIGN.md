@@ -4,12 +4,6 @@
 **Date:** December 2025  
 **Version:** 1.0
 
----
-
-## 1. Executive Summary
-
-This document describes the design of a data pipeline for floorplan. The pipeline converts floorplan images into structured data, applies cleaning and optimizing.
-
 ## Table of Contents
 - [1. Executive Summary](#1-executive-summary)
 - [2. Pipeline Architecture](#2-pipeline-architecture)
@@ -23,6 +17,13 @@ This document describes the design of a data pipeline for floorplan. The pipelin
   - [3.2 Event Store (ML Training Data)](#32-event-store-ml-training-data---optional)
 - [4. Pipeline Orchestration (Airflow Setup)](#4-pipeline-orchestration-airflow-setup)
 - [5. Versioning & Reproducibility](#5-versioning--reproducibility)
+
+---
+
+## 1. Executive Summary
+
+This document describes the design of a data pipeline for floorplan. The pipeline converts floorplan images into structured data, applies cleaning and optimizing.
+
 
 ---
 
