@@ -25,7 +25,7 @@ pip install -r requirements.txt
 
 4. Set up environment variables (if using RasterScan API, Gemini):
 ```bash
-# Create or edit .env file
+# Create and edit .env file
 RASTER_API_KEY=your_raster_api_key_here
 GOOGLE_API_KEY=your_google_ai_api_key_here
 GEMINI_MODEL=gemini_model_you_use
@@ -55,7 +55,7 @@ This will:
 4. Save outputs to `outputs/gemini`
 
 
-### Run with Apache Airflow
+### Run with Apache Airflow (part 2 - task 4)
 1. Find the DAG file for the workflow definition in `airflow/dags/floorplan_orchestration.py`
 2. Configure PYTHONPATH to ensure Airflow can import modules from the project:
 ```
@@ -66,11 +66,11 @@ export PYTHONPATH=<path-to>/floorplan-data-pipeline
 ```
 export AIRFLOW_HOME=<path-to>/floorplan-data-pipeline/airflow
 ```
-4. Start Airflow locally by running the following command line. Airflow will auto-generate default login credentials in `airflow/logs/simple_auth_manager_passwords.json.generated`. You can find the directory in your terminal.
+4. Start Airflow locally by running the following command line. Airflow will auto-generate default login credentials (username and password) in `airflow/logs/simple_auth_manager_passwords.json.generated`. You can find the directory in your terminal.
 ```
 airflow standalone
 ```
 
 5. Open the Airflow UI by visiting http://localhost:8080
 
-7. Locate Your DAG. In the Airflow UI, search for `rasterscan_floorplan_pipeline`
+7. In the Airflow UI, search for `rasterscan_floorplan_pipeline` to locate Your DAG
