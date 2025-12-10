@@ -60,7 +60,7 @@ python src/gemini/main.py
 ```
 This will:
 1. Load raw floorplan data and use Gemini to get JSON output file
-2. Clean and validate the geometry 
+2. Clean and validate the geometry by using prompts
 3. Apply optimizations (e.g., add bedrooms with additional constraints, such as only creating rooms that fit within the property boundary since we cannot extend construction onto a neighbor’s land)
 4. Save outputs to `outputs/gemini`
 
