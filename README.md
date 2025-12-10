@@ -66,3 +66,10 @@ This workflow is focused on prompt engineering:
 4. Save outputs to `outputs/gemini`
 
 
+## Outputs
+The outputs of Gemini and RasterScan are saved in the `outputs` directory:
+- **Gemini**:
+The raw recognizer JSON from Gemini contains rich contextual information, including room types. This gives users flexibility to decide how to clean the data and optimize the floorplan (e.g., adding rooms, removing walls). However, the outputs are not always accurate. For example, Gemini might label a room as an ``office`` even when the floorplan is for a family house with no office. To improve reliability, we can extend Gemini with Agents that detect issues and guide users toward final answers
+
+- **RasterScan** (with hardcoded cleaner and optimizer):
+RasterScan's raw recognizer JSON does not include room types, so it lacks rich context. All actions (e.g., adding walls, splitting rooms) are predefined, making the outcomes predictable, easy to control, and simple to debug or backtrack. However, users cannot perform actions beyond what has been defined, which limits flexibility but ensures consistency
