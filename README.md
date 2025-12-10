@@ -8,7 +8,7 @@ A Python pipeline for extracting, cleaning, and optimizing floorplan data from i
 - [Usage](#usage)
   - [Run the pipeline with RasterScan](#run-the-pipeline-with-rasterscan)
   - [Run the pipeline with Gemini](#run-the-pipeline-with-gemini)
-  - [Run with Apache Airflow (part 2 - task 4)](#run-with-apache-airflow-part-2---task-4)
+  <!-- - [Run with Apache Airflow (part 2 - task 4)](#run-with-apache-airflow-part-2---task-4) -->
 
 ## Overview
 **Note**: Part 2 mentioned about RasterScan (from Hugging Face) and Gemini, emphasizing prompt engineering and the data pipeline. Because of this, the repository was designed to be more open-ended and to keep RasterScan and Gemini separate. RasterScan produces deterministic outputs, while generative AI is non-deterministic. Keeping them separate is useful for future work, whether we want to use the data to train our own models or monitor hallucinations that could mess our cleaned dataset, or enables AI-driven solution based on user actions.
@@ -65,22 +65,3 @@ This will:
 4. Save outputs to `outputs/gemini`
 
 
-### Run with Apache Airflow (part 2 - task 4)
-1. Find the DAG file for the workflow definition in `airflow/dags/floorplan_orchestration.py`
-2. Configure PYTHONPATH to ensure Airflow can import modules from the project:
-```
-export PYTHONPATH=<path-to>/floorplan-data-pipeline
-```
-
-3. Set AIRFLOW_HOME
-```
-export AIRFLOW_HOME=<path-to>/floorplan-data-pipeline/airflow
-```
-4. Start Airflow locally by running the following command line. Airflow will auto-generate default login credentials (username and password) in `airflow/logs/simple_auth_manager_passwords.json.generated`. You can find the directory in your terminal.
-```
-airflow standalone
-```
-
-5. Open the Airflow UI by visiting http://localhost:8080
-
-7. In the Airflow UI, search for `rasterscan_floorplan_pipeline` to locate Your DAG

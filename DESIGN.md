@@ -146,8 +146,27 @@ CREATE INDEX idx_events_user ON events.recognition_events(user_id);
 
 We use an event-driven architecture supported by Apache Airflow to coordinate the workflow of the pipeline.
 
-The orchestration for this project is defined within the `floorplan-data-pipeline` Airflow setup.
-You can run the workflow locally by following the Airflow setup guide provided in the `README.md`. Once Airflow is configured and running, you will be able to trigger, monitor, and debug the pipeline directly through the Airflow UI.
+### Run with Apache Airflow (part 2 - task 4)
+1. Find the DAG file for the workflow definition in `airflow/dags/floorplan_orchestration.py`
+2. Configure PYTHONPATH to ensure Airflow can import modules from the project:
+```
+export PYTHONPATH=<path-to>/floorplan-data-pipeline
+```
+
+3. Set AIRFLOW_HOME
+```
+export AIRFLOW_HOME=<path-to>/floorplan-data-pipeline/airflow
+```
+4. Start Airflow locally by running the following command line. Airflow will auto-generate default login credentials (username and password) in `airflow/logs/simple_auth_manager_passwords.json.generated`. You can find the directory in your terminal.
+```
+airflow standalone
+```
+
+5. Open the Airflow UI by visiting http://localhost:8080
+
+7. In the Airflow UI, search for `rasterscan_floorplan_pipeline` to locate Your DAG
+
+The orchestration for this project is defined within the `floorplan-data-pipeline` Airflow setup. Once Airflow is configured and running, you will be able to trigger, monitor, and debug the pipeline directly through the Airflow UI.
 
 
 ## 5. Versioning & Reproducibility
