@@ -1,0 +1,163 @@
+{
+  "version": "1.0",
+  "schema": "canonical_v1",
+  "timestamp": "2025-12-08T22:00:51Z",
+  "metadata": {
+    "total_area_sqm": 436.5,
+    "room_count": 14,
+    "wall_thickness_normalized": 0.15,
+    "cleaning_applied": true,
+    "coordinate_system": "cartesian_meters_bottom_left_origin"
+  },
+  "rooms": [
+    {
+      "id": "r_bed2",
+      "type": "bedroom",
+      "name": "Bed 2",
+      "vertices": [[0.0, 0.0], [4.2, 0.0], [4.2, 5.3], [0.0, 5.3]],
+      "area": 22.26,
+      "adjacent_rooms": ["r_bath2", "r_study"],
+      "metadata": {"confidence": 0.98}
+    },
+    {
+      "id": "r_study",
+      "type": "office",
+      "name": "Formal Study",
+      "vertices": [[4.35, 0.0], [8.0, 0.0], [8.0, 4.5], [4.35, 4.5]],
+      "area": 16.42,
+      "adjacent_rooms": ["r_bed2", "r_foyer"],
+      "metadata": {"confidence": 0.95}
+    },
+    {
+      "id": "r_foyer",
+      "type": "hallway",
+      "name": "Foyer",
+      "vertices": [[8.15, 0.0], [10.5, 0.0], [10.5, 6.0], [8.15, 6.0]],
+      "area": 14.1,
+      "adjacent_rooms": ["r_study", "r_bed3", "r_family"],
+      "metadata": {"confidence": 0.92}
+    },
+    {
+      "id": "r_bed3",
+      "type": "bedroom",
+      "name": "Bed 3",
+      "vertices": [[10.65, 0.0], [14.5, 0.0], [14.5, 4.0], [10.65, 4.0]],
+      "area": 15.4,
+      "adjacent_rooms": ["r_foyer", "r_hall_right"],
+      "metadata": {"confidence": 0.98}
+    },
+    {
+      "id": "r_bed4",
+      "type": "bedroom",
+      "name": "Bed 4",
+      "vertices": [[19.0, 0.0], [23.5, 0.0], [23.5, 4.5], [19.0, 4.5]],
+      "area": 20.25,
+      "adjacent_rooms": ["r_hall_right"],
+      "metadata": {"confidence": 0.98}
+    },
+    {
+      "id": "r_primary_suite",
+      "type": "bathroom",
+      "name": "Primary Suite/Bath",
+      "vertices": [[0.0, 5.45], [5.0, 5.45], [5.0, 11.5], [0.0, 11.5]],
+      "area": 30.25,
+      "adjacent_rooms": ["r_bed2", "r_primary_bed", "r_family"],
+      "metadata": {"confidence": 0.94}
+    },
+    {
+      "id": "r_primary_bed",
+      "type": "bedroom",
+      "name": "Primary Bedroom",
+      "vertices": [[0.0, 11.65], [5.5, 11.65], [5.5, 17.2], [0.0, 17.2]],
+      "area": 30.52,
+      "adjacent_rooms": ["r_primary_suite", "r_porch_back"],
+      "metadata": {"confidence": 0.99}
+    },
+    {
+      "id": "r_family",
+      "type": "living_room",
+      "name": "Family Room",
+      "vertices": [[5.15, 4.65], [11.0, 4.65], [11.0, 11.5], [5.15, 11.5]],
+      "area": 40.07,
+      "adjacent_rooms": ["r_foyer", "r_primary_suite", "r_kitchen", "r_porch_back"],
+      "metadata": {"confidence": 0.96}
+    },
+    {
+      "id": "r_kitchen",
+      "type": "kitchen",
+      "name": "Kitchen",
+      "vertices": [[11.15, 4.65], [15.5, 4.65], [15.5, 11.5], [11.15, 11.5]],
+      "area": 29.79,
+      "adjacent_rooms": ["r_family", "r_dining", "r_utility"],
+      "metadata": {"confidence": 0.97}
+    },
+    {
+      "id": "r_dining",
+      "type": "dining_room",
+      "name": "Casual Dining",
+      "vertices": [[11.15, 11.65], [15.5, 11.65], [15.5, 15.0], [11.15, 15.0]],
+      "area": 14.57,
+      "adjacent_rooms": ["r_kitchen", "r_media"],
+      "metadata": {"confidence": 0.95}
+    },
+    {
+      "id": "r_utility",
+      "type": "utility",
+      "name": "Utility/Mud",
+      "vertices": [[15.65, 4.65], [18.0, 4.65], [18.0, 10.0], [15.65, 10.0]],
+      "area": 12.57,
+      "adjacent_rooms": ["r_kitchen", "r_garage"],
+      "metadata": {"confidence": 0.93}
+    },
+    {
+      "id": "r_garage",
+      "type": "garage",
+      "name": "Attached Garage",
+      "vertices": [[18.15, 4.65], [27.0, 4.65], [27.0, 14.5], [18.15, 14.5]],
+      "area": 87.17,
+      "adjacent_rooms": ["r_utility", "r_bed4"],
+      "metadata": {"confidence": 0.99}
+    },
+    {
+      "id": "r_media",
+      "type": "media_room",
+      "name": "Media Room",
+      "vertices": [[15.65, 11.65], [20.0, 11.65], [20.0, 16.5], [15.65, 16.5]],
+      "area": 21.09,
+      "adjacent_rooms": ["r_dining"],
+      "metadata": {"confidence": 0.95}
+    },
+    {
+      "id": "r_porch_back",
+      "type": "outdoor",
+      "name": "Back Porch",
+      "vertices": [[5.65, 11.65], [11.0, 11.65], [11.0, 17.0], [5.65, 17.0]],
+      "area": 28.62,
+      "adjacent_rooms": ["r_family", "r_primary_bed"],
+      "metadata": {"confidence": 0.90}
+    }
+  ],
+  "walls": [
+    {"start": [0.0, 5.3], "end": [4.2, 5.3], "thickness": 0.15, "type": "interior"},
+    {"start": [4.2, 0.0], "end": [4.35, 0.0], "thickness": 0.15, "type": "interior"},
+    {"start": [8.0, 0.0], "end": [8.15, 0.0], "thickness": 0.15, "type": "interior"},
+    {"start": [11.0, 4.65], "end": [11.15, 4.65], "thickness": 0.15, "type": "interior_load_bearing"},
+    {"start": [18.0, 4.65], "end": [18.15, 4.65], "thickness": 0.15, "type": "fire_wall"}
+  ],
+  "adjacency_graph": {
+    "r_bed2": ["r_study", "r_primary_suite"],
+    "r_study": ["r_bed2", "r_foyer"],
+    "r_foyer": ["r_study", "r_bed3", "r_family"],
+    "r_bed3": ["r_foyer"],
+    "r_bed4": ["r_garage"],
+    "r_primary_suite": ["r_bed2", "r_primary_bed", "r_family"],
+    "r_primary_bed": ["r_primary_suite", "r_porch_back"],
+    "r_family": ["r_foyer", "r_primary_suite", "r_kitchen", "r_porch_back"],
+    "r_kitchen": ["r_family", "r_dining", "r_utility"],
+    "r_dining": ["r_kitchen", "r_media"],
+    "r_utility": ["r_kitchen", "r_garage"],
+    "r_garage": ["r_utility", "r_bed4"],
+    "r_media": ["r_dining"],
+    "r_porch_back": ["r_family", "r_primary_bed"]
+  }
+}
